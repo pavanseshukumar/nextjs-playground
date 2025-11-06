@@ -8,6 +8,7 @@ import {
   Formik,
 } from "formik";
 import * as Yup from "yup";
+import { Button } from "./ui/button";
 
 const Form = () => {
   const [status, setStatus] = useState("");
@@ -61,21 +62,21 @@ const Form = () => {
             type="text"
             name="name"
             placeholder="Name"
-            className="border border-gray-300 rounded-md p-2"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "
           />
           <ErrorMessage name="name" component="div" className="text-red-500" />
           <FormikField
             type="email"
             name="email"
             placeholder="Email"
-            className="border border-gray-300 rounded-md p-2"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <ErrorMessage name="email" component="div" className="text-red-500" />
           <FormikField
             type="password"
             name="password"
             placeholder="Password"
-            className="border border-gray-300 rounded-md p-2"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <ErrorMessage
             name="password"
@@ -86,19 +87,17 @@ const Form = () => {
             type="text"
             name="mobile"
             placeholder="Mobile"
-            className="border border-gray-300 rounded-md p-2"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <ErrorMessage
             name="mobile"
             component="div"
             className="text-red-500"
           />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded-md cursor-pointer"
-          >
+
+          <Button type="submit" className="cursor-pointer">
             Submit
-          </button>
+          </Button>
         </FormikForm>
       </Formik>
       {status && <p className="text-green-500 mt-4">{status}</p>}
